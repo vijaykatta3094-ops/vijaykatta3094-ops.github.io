@@ -111,17 +111,28 @@ img { max-width: 100%; display: block; }
   color: transparent;
 }
 .role {
-  font-size: 18px;
+  font-size: 20px;
   color: #cbd5e1;
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   font-weight: 500;
 }
 .role .hl { color: #22d3ee; }
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.2s ease-in-out infinite;
+}
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30%      { transform: rotate(14deg); }
+  20%, 40%      { transform: rotate(-8deg); }
+}
 .tagline {
   color: #94a3b8;
   font-size: 16px;
-  max-width: 560px;
+  max-width: 620px;
   margin: 0 auto 36px;
+  line-height: 1.7;
 }
 .hero-cta {
   display: flex;
