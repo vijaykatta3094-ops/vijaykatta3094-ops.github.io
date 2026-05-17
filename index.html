@@ -19,8 +19,7 @@
     <h1 class="name">VIJAY <span class="name-accent">KATTA</span></h1>
     <p class="role">Senior ML Engineer at <span class="hl">Meta</span></p>
     <p class="tagline">
-      I build the systems that make AI useful in everyday work — ads ML at Meta, autonomous agents at home,
-      voice interfaces, and local LLM infrastructure on an RTX 5090 + DGX Spark.
+      I build personal AI infrastructure — a 6-agent team, 21 Claude Code skills, voice control, and local-first LLMs running on an RTX 5090 + DGX Spark in my house.
     </p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://github.com/vijaykatta3094-ops" target="_blank" rel="noopener">View GitHub →</a>
@@ -30,108 +29,109 @@
   <div class="hero-glow"></div>
 </section>
 
-<!-- ===== WORK EXPERIENCE ===== -->
-<section class="section" id="work">
-  <h2 class="section-title">Selected Experience</h2>
-  <div class="work-grid">
-
-    <article class="work-card">
-      <div class="work-logo work-logo-meta">M</div>
-      <div class="work-body">
-        <div class="work-co">Meta</div>
-        <div class="work-role">Senior Machine Learning Engineer</div>
-        <div class="work-meta">Menlo Park · Dec 2024 — Present</div>
-        <div class="work-note">Leading WAIST (Why Am I Seeing This Ad) — ranking & transparency for ad delivery.</div>
-      </div>
-    </article>
-
-    <article class="work-card">
-      <div class="work-logo work-logo-verizon">V</div>
-      <div class="work-body">
-        <div class="work-co">Verizon Wireless</div>
-        <div class="work-role">Machine Learning Engineer</div>
-        <div class="work-meta">Remote · Aug 2018 — Nov 2024 · 6 yrs</div>
-      </div>
-    </article>
-
-    <article class="work-card">
-      <div class="work-logo work-logo-uc">UC</div>
-      <div class="work-body">
-        <div class="work-co">University of Cincinnati — Lindner</div>
-        <div class="work-role">M.S. Business Analytics</div>
-        <div class="work-meta">Cincinnati, OH</div>
-      </div>
-    </article>
-
-    <article class="work-card">
-      <div class="work-logo work-logo-nit">N</div>
-      <div class="work-body">
-        <div class="work-co">NIT Warangal</div>
-        <div class="work-role">B.S.</div>
-        <div class="work-meta">Warangal, India</div>
-      </div>
-    </article>
-
-    <article class="work-card">
-      <div class="work-logo work-logo-stanford">S</div>
-      <div class="work-body">
-        <div class="work-co">Stanford</div>
-        <div class="work-role">Machine Learning Certificate</div>
-        <div class="work-meta">Jan 2017</div>
-      </div>
-    </article>
-
-  </div>
-</section>
 
 <!-- ===== PROJECTS ===== -->
 <section class="section" id="projects">
-  <h2 class="section-title">Projects</h2>
-  <p class="section-sub">Side projects I run on a 5090 + DGX Spark at home. Most live on GitHub.</p>
+  <h2 class="section-title">Things I Build</h2>
+  <p class="section-sub">
+    All running on an RTX 5090 + DGX Spark at home. Some public on GitHub, others private —
+    you can think of these as one continuous experiment in making AI useful in everyday work.
+  </p>
+
+  <!-- AGENTS -->
+  <h3 class="cat-title">Personal AI Stack</h3>
   <div class="projects-grid">
-
-    <a class="proj" href="https://github.com/vijaykatta3094-ops/hoot" target="_blank" rel="noopener">
-      <div class="proj-tag">voice · gpu</div>
-      <h3 class="proj-title">Hoot</h3>
-      <p class="proj-desc">Push-to-talk voice transcription for Linux. Parakeet on GPU, Ctrl+Space hotkey, sub-second latency, ydotool paste to any window.</p>
-      <div class="proj-stack">Python · NeMo · sounddevice · ydotool</div>
-    </a>
-
-    <a class="proj" href="https://github.com/vijaykatta3094-ops/interview-visuals" target="_blank" rel="noopener">
-      <div class="proj-tag">edu · viz</div>
-      <h3 class="proj-title">Interview Visuals</h3>
-      <p class="proj-desc">A growing library of self-contained HTML pages for interview prep — Mermaid + Vega + KaTeX, with hover glosses for jargon.</p>
-      <div class="proj-stack">HTML · Mermaid · Vega-Lite · KaTeX</div>
-    </a>
-
-    <div class="proj proj-private" aria-label="private project">
+    <div class="proj proj-private">
       <div class="proj-tag">agents · pwa <span class="proj-badge">private</span></div>
       <h3 class="proj-title">Command Center</h3>
-      <p class="proj-desc">Live PWA dashboard for a 6-agent personal AI team (Chief, Coach, Scout, Herald, Lab, Ops). iOS + desktop, voice control, schedule and feedback inbox per agent.</p>
+      <p class="proj-desc">PWA dashboard for a 6-agent personal AI team — Chief (comms), Coach (interview prep), Scout (research), Herald (content), Lab (ML), Ops (tools). iOS + desktop, voice control, per-agent schedule and feedback inbox.</p>
       <div class="proj-stack">Flask · service-worker · WhatsApp MCP</div>
     </div>
 
-    <div class="proj proj-private" aria-label="private project">
+    <div class="proj proj-private">
       <div class="proj-tag">infra · cc <span class="proj-badge">private</span></div>
       <h3 class="proj-title">Claude Vault</h3>
-      <p class="proj-desc">Central store for Claude Code memory tree, skills, sessions, and project artifacts. Synced across machines via /sync. Powers everything I do in Claude Code.</p>
+      <p class="proj-desc">Central store for Claude Code memory tree, 21 skills, sessions, and project artifacts. Synced across machines via /sync. Powers every Claude Code session I run.</p>
       <div class="proj-stack">Markdown · YAML · git</div>
     </div>
 
-    <div class="proj proj-private" aria-label="local / work-in-progress">
+    <div class="proj proj-private">
+      <div class="proj-tag">observer <span class="proj-badge">local</span></div>
+      <h3 class="proj-title">Local Brain</h3>
+      <p class="proj-desc">Qwen3:14b on RTX 5090 watches my Claude Code conversations daily, extracts weak areas / preferences / project state, and updates the memory tree + Google Docs. All local, $0 cost.</p>
+      <div class="proj-stack">Qwen3:14b · Ollama · OpenClaw cron</div>
+    </div>
+
+    <div class="proj proj-private">
+      <div class="proj-tag">memory <span class="proj-badge">local</span></div>
+      <h3 class="proj-title">Memory Tree</h3>
+      <p class="proj-desc">Tree-of-markdown memory system for Claude Code. Routing descriptions per node, max 5 children, leaves point at Google Docs. Loads context surgically instead of dumping it all.</p>
+      <div class="proj-stack">Markdown · /memory skill</div>
+    </div>
+  </div>
+
+  <!-- VOICE & HARDWARE -->
+  <h3 class="cat-title">Voice & Hardware</h3>
+  <div class="projects-grid">
+    <a class="proj" href="https://github.com/vijaykatta3094-ops/hoot" target="_blank" rel="noopener">
+      <div class="proj-tag">voice · gpu</div>
+      <h3 class="proj-title">Hoot</h3>
+      <p class="proj-desc">Push-to-talk voice transcription for Linux. Parakeet on GPU, Ctrl+Space hotkey, sub-second latency, ydotool paste to any window. Public.</p>
+      <div class="proj-stack">Python · NeMo · sounddevice · ydotool</div>
+    </a>
+
+    <div class="proj proj-private">
+      <div class="proj-tag">local-ai <span class="proj-badge">local</span></div>
+      <h3 class="proj-title">Spark Bridge</h3>
+      <p class="proj-desc">Async Claude↔Claude coordination between an RTX 5090 workstation and a DGX Spark over a shared Drive folder. Model serving, file sync, GPU telemetry, tmux session control.</p>
+      <div class="proj-stack">SSH · rsync · sshfs · cron</div>
+    </div>
+
+    <div class="proj proj-private">
       <div class="proj-tag">systems · viz <span class="proj-badge">local</span></div>
       <h3 class="proj-title">GPU Topology</h3>
       <p class="proj-desc">Live web dashboard that visualises a machine's hardware (CPU, RAM, NVMe, GPU) as a realistic isometric scene. Updates in real time from nvidia-smi + psutil.</p>
       <div class="proj-stack">three.js · nvidia-smi · psutil</div>
     </div>
 
-    <div class="proj proj-private" aria-label="local / work-in-progress">
-      <div class="proj-tag">local-ai <span class="proj-badge">local</span></div>
-      <h3 class="proj-title">Spark Bridge</h3>
-      <p class="proj-desc">Drive-folder protocol for async Claude-to-Claude coordination between a 5090 workstation and a DGX Spark — model serving, file sync, GPU telemetry, tmux session control.</p>
-      <div class="proj-stack">SSH · rsync · sshfs · cron</div>
+    <div class="proj proj-private">
+      <div class="proj-tag">tuning <span class="proj-badge">skill</span></div>
+      <h3 class="proj-title">GPU Coach</h3>
+      <p class="proj-desc">Captures GPU telemetry, classifies the bottleneck regime (compute / bandwidth / VRAM-cap / thermal / PCIe / idle), and prints ranked "free wins" — knob changes that exploit the unused dimension.</p>
+      <div class="proj-stack">nvidia-smi · roofline · llama.cpp</div>
+    </div>
+  </div>
+
+  <!-- TOOLING -->
+  <h3 class="cat-title">Skills & Tooling</h3>
+  <div class="projects-grid">
+    <div class="proj proj-private">
+      <div class="proj-tag">dispatcher <span class="proj-badge">skill</span></div>
+      <h3 class="proj-title">/validate</h3>
+      <p class="proj-desc">Category-aware validation router for Claude Code. Auto-detects what changed (frontend / backend / ML / skill) from a git diff, runs the right validator per category, returns terse PASS/FAIL with evidence. Caught 6 real bugs on first run.</p>
+      <div class="proj-stack">Bash · see_web · superpowers</div>
     </div>
 
+    <div class="proj proj-private">
+      <div class="proj-tag">authoring <span class="proj-badge">skill</span></div>
+      <h3 class="proj-title">/visualize + /see_web</h3>
+      <p class="proj-desc">Author a one-page JSX visual (React + Babel-in-browser) for any concept, then verify what you actually rendered by screenshotting it with headless Chromium and reading the console errors. Closes the "I built UI but cannot see it" loop.</p>
+      <div class="proj-stack">React · Babel · Playwright</div>
+    </div>
+
+    <a class="proj" href="https://github.com/vijaykatta3094-ops/interview-visuals" target="_blank" rel="noopener">
+      <div class="proj-tag">edu · viz</div>
+      <h3 class="proj-title">Interview Visuals</h3>
+      <p class="proj-desc">A growing library of self-contained HTML pages for interview prep — Mermaid + Vega + KaTeX, with hover glosses for jargon. Public.</p>
+      <div class="proj-stack">HTML · Mermaid · Vega-Lite · KaTeX</div>
+    </a>
+
+    <div class="proj proj-private">
+      <div class="proj-tag">research <span class="proj-badge">skill</span></div>
+      <h3 class="proj-title">/cc-tips</h3>
+      <p class="proj-desc">Given a use case, researches what Claude Code skills, plugins, hooks, or patterns already exist before I build a new one. Searches GitHub awesome-lists, named experts, HN, Reddit, X. Suggest-only — never installs.</p>
+      <div class="proj-stack">WebSearch · gh · Agent</div>
+    </div>
   </div>
 </section>
 
@@ -160,6 +160,9 @@
       <div class="contact-label">Email</div>
       <div class="contact-handle">vijaykatta3094@gmail.com</div>
     </a>
+  </div>
+  <div class="creds">
+    Senior ML Engineer @ Meta &nbsp;·&nbsp; Previously Verizon Wireless &nbsp;·&nbsp; MS UC Lindner &nbsp;·&nbsp; BS NIT Warangal &nbsp;·&nbsp; Stanford ML
   </div>
   <footer class="footer">
     <span>Built with vanilla HTML/CSS · hosted on GitHub Pages</span>
