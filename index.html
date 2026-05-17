@@ -39,105 +39,47 @@
 <section class="section" id="projects">
   <h2 class="section-title">Things I Build</h2>
   <p class="section-sub">
-    Twelve names for the same obsession — making the AI in my house actually useful.
-    Some of these are public on GitHub. Some are still too messy to publish, but they're real,
-    and I use them every day.
+    Five projects I keep coming back to. Each one scratched a real itch in my own AI work —
+    multi-agent orchestration, model evaluation at home, low-latency inference, GPU performance,
+    and the dev tooling that ties it all together.
   </p>
-
-  <!-- AGENTS -->
-  <h3 class="cat-title">Personal AI Stack</h3>
   <div class="projects-grid">
+
     <div class="proj proj-private">
-      <div class="proj-tag">agents · pwa <span class="proj-badge">private</span></div>
-      <h3 class="proj-title">Command Center</h3>
-      <p class="proj-desc">PWA dashboard for a 6-agent personal AI team — Chief (comms), Coach (interview prep), Scout (research), Herald (content), Lab (ML), Ops (tools). iOS + desktop, voice control, per-agent schedule and feedback inbox.</p>
-      <div class="proj-stack">Flask · service-worker · WhatsApp MCP</div>
+      <div class="proj-tag">multi-agent · platform</div>
+      <h3 class="proj-title">Personal AI Stack</h3>
+      <p class="proj-desc">Multi-agent orchestration platform — a PWA dashboard for six specialized AI agents (comms, interview prep, research, content, ML, ops) running across local and cloud LLMs. Per-agent state machines, scheduled jobs, feedback loops, voice control, iOS + desktop. The whole thing is glued together by a hierarchical memory tree and 21 custom Claude Code skills I authored.</p>
+      <div class="proj-stack">Flask · PWA · multi-LLM · MCP · cron</div>
     </div>
 
     <div class="proj proj-private">
-      <div class="proj-tag">infra · cc <span class="proj-badge">private</span></div>
-      <h3 class="proj-title">Claude Vault</h3>
-      <p class="proj-desc">Central store for Claude Code memory tree, 21 skills, sessions, and project artifacts. Synced across machines via /sync. Powers every Claude Code session I run.</p>
-      <div class="proj-stack">Markdown · YAML · git</div>
-    </div>
-
-    <div class="proj proj-private">
-      <div class="proj-tag">observer <span class="proj-badge">local</span></div>
+      <div class="proj-tag">llm-eval · pipeline</div>
       <h3 class="proj-title">Local Brain</h3>
-      <p class="proj-desc">Qwen3:14b on RTX 5090 watches my Claude Code conversations daily, extracts weak areas / preferences / project state, and updates the memory tree + Google Docs. All local, $0 cost.</p>
-      <div class="proj-stack">Qwen3:14b · Ollama · OpenClaw cron</div>
+      <p class="proj-desc">Continuous evaluation pipeline using a 14B-parameter LLM running entirely on local GPU. Scores my own work daily, extracts structured signals via constrained generation (skill gaps, preferences, project state), and writes them back into a memory store that the rest of the stack reads. A self-supervised data flywheel — $0 inference cost, zero data leaving the house.</p>
+      <div class="proj-stack">Qwen3-14B · Ollama · structured output · cron</div>
     </div>
 
-    <div class="proj proj-private">
-      <div class="proj-tag">memory <span class="proj-badge">local</span></div>
-      <h3 class="proj-title">Memory Tree</h3>
-      <p class="proj-desc">Tree-of-markdown memory system for Claude Code. Routing descriptions per node, max 5 children, leaves point at Google Docs. Loads context surgically instead of dumping it all.</p>
-      <div class="proj-stack">Markdown · /memory skill</div>
-    </div>
-  </div>
-
-  <!-- VOICE & HARDWARE -->
-  <h3 class="cat-title">Voice & Hardware</h3>
-  <div class="projects-grid">
     <a class="proj" href="https://github.com/vijaykatta3094-ops/hoot" target="_blank" rel="noopener">
-      <div class="proj-tag">voice · gpu</div>
+      <div class="proj-tag">low-latency · gpu-inference</div>
       <h3 class="proj-title">Hoot</h3>
-      <p class="proj-desc">Push-to-talk voice transcription for Linux. Parakeet on GPU, Ctrl+Space hotkey, sub-second latency, ydotool paste to any window. Public.</p>
-      <div class="proj-stack">Python · NeMo · sounddevice · ydotool</div>
+      <p class="proj-desc">Sub-second voice-to-text deployed on consumer GPU. Custom audio capture pipeline that handles 30+ failure modes the popular libraries don't (Bluetooth SCO dropouts, mic source switching, silence hallucinations), Nvidia Parakeet TDT for transcription, OS-level paste-anywhere integration. Production-grade — I use it every day. Public on GitHub.</p>
+      <div class="proj-stack">Python · NeMo · CUDA · sounddevice · ydotool</div>
     </a>
 
     <div class="proj proj-private">
-      <div class="proj-tag">local-ai <span class="proj-badge">local</span></div>
-      <h3 class="proj-title">Spark Bridge</h3>
-      <p class="proj-desc">Async Claude↔Claude coordination between an RTX 5090 workstation and a DGX Spark over a shared Drive folder. Model serving, file sync, GPU telemetry, tmux session control.</p>
-      <div class="proj-stack">SSH · rsync · sshfs · cron</div>
-    </div>
-
-    <div class="proj proj-private">
-      <div class="proj-tag">systems · viz <span class="proj-badge">local</span></div>
-      <h3 class="proj-title">GPU Topology</h3>
-      <p class="proj-desc">Live web dashboard that visualises a machine's hardware (CPU, RAM, NVMe, GPU) as a realistic isometric scene. Updates in real time from nvidia-smi + psutil.</p>
-      <div class="proj-stack">three.js · nvidia-smi · psutil</div>
-    </div>
-
-    <div class="proj proj-private">
-      <div class="proj-tag">tuning <span class="proj-badge">skill</span></div>
+      <div class="proj-tag">perf-engineering · gpu</div>
       <h3 class="proj-title">GPU Coach</h3>
-      <p class="proj-desc">Captures GPU telemetry, classifies the bottleneck regime (compute / bandwidth / VRAM-cap / thermal / PCIe / idle), and prints ranked "free wins" — knob changes that exploit the unused dimension.</p>
-      <div class="proj-stack">nvidia-smi · roofline · llama.cpp</div>
+      <p class="proj-desc">Performance-engineering tool for local LLM inference. Captures GPU telemetry, applies roofline analysis to classify the active bottleneck regime (compute-bound, bandwidth-bound, VRAM-capped, thermal-throttled, PCIe-bottlenecked, or idle), then ranks concrete optimizations that exploit the unused dimension. Calibrated against RTX 5090 + Qwen3-14B.</p>
+      <div class="proj-stack">nvidia-smi · roofline · Ollama · llama.cpp · vLLM</div>
     </div>
-  </div>
 
-  <!-- TOOLING -->
-  <h3 class="cat-title">Skills & Tooling</h3>
-  <div class="projects-grid">
     <div class="proj proj-private">
-      <div class="proj-tag">dispatcher <span class="proj-badge">skill</span></div>
+      <div class="proj-tag">ci · dev-tools</div>
       <h3 class="proj-title">/validate</h3>
-      <p class="proj-desc">Category-aware validation router for Claude Code. Auto-detects what changed (frontend / backend / ML / skill) from a git diff, runs the right validator per category, returns terse PASS/FAIL with evidence. Caught 6 real bugs on first run.</p>
-      <div class="proj-stack">Bash · see_web · superpowers</div>
+      <p class="proj-desc">Auto-validation dispatcher for AI-assisted development. Inspects the git diff to decide which categories apply (frontend, backend, ML, skill), runs the right validator per category, and returns one PASS/FAIL line with evidence — no rubber-stamping. Found six real production bugs the first time it ran on a real codebase, including a misclassified systemd directive and broken YAML frontmatter across multiple skills.</p>
+      <div class="proj-stack">Bash · see_web · Playwright · superpowers</div>
     </div>
 
-    <div class="proj proj-private">
-      <div class="proj-tag">authoring <span class="proj-badge">skill</span></div>
-      <h3 class="proj-title">/visualize + /see_web</h3>
-      <p class="proj-desc">Author a one-page JSX visual (React + Babel-in-browser) for any concept, then verify what you actually rendered by screenshotting it with headless Chromium and reading the console errors. Closes the "I built UI but cannot see it" loop.</p>
-      <div class="proj-stack">React · Babel · Playwright</div>
-    </div>
-
-    <a class="proj" href="https://github.com/vijaykatta3094-ops/interview-visuals" target="_blank" rel="noopener">
-      <div class="proj-tag">edu · viz</div>
-      <h3 class="proj-title">Interview Visuals</h3>
-      <p class="proj-desc">A growing library of self-contained HTML pages for interview prep — Mermaid + Vega + KaTeX, with hover glosses for jargon. Public.</p>
-      <div class="proj-stack">HTML · Mermaid · Vega-Lite · KaTeX</div>
-    </a>
-
-    <div class="proj proj-private">
-      <div class="proj-tag">research <span class="proj-badge">skill</span></div>
-      <h3 class="proj-title">/cc-tips</h3>
-      <p class="proj-desc">Given a use case, researches what Claude Code skills, plugins, hooks, or patterns already exist before I build a new one. Searches GitHub awesome-lists, named experts, HN, Reddit, X. Suggest-only — never installs.</p>
-      <div class="proj-stack">WebSearch · gh · Agent</div>
-    </div>
   </div>
 </section>
 
